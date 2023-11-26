@@ -22,7 +22,15 @@ pipeline {
                 echo 'creating docker image'
             }
         }
+	
 
+	 stage('push docker image') 
+        {
+            steps 
+            {
+                echo 'pushing docker image'
+            }
+        }
         
     }
 }
