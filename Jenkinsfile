@@ -20,6 +20,7 @@ pipeline {
             steps 
             {
                 echo 'creating docker image'
+		sh 'cd linktoworld && docker build -t papache .'
             }
         }
 	
