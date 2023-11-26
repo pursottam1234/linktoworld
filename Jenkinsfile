@@ -30,6 +30,7 @@ pipeline {
             steps 
             {
                 echo 'pushing docker image'
+		sh 'docker image tag papache pursottam69bhandari/papache:v1'
             }
         }
         
