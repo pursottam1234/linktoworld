@@ -43,6 +43,15 @@ pipeline {
 		sh ' sudo docker login -u=pursottam69bhandari -p=purush.bhandari69@ && sudo docker push pursottam69bhandari/papache:v1'
             }
         }
+
+	stage('create aws infrastructure terraform') 
+        {
+            steps 
+            {
+                echo 'creating infrastructure
+		sh ' sudo terraform init'
+            }
+        }
         
     }
 }
