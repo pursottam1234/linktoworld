@@ -49,7 +49,7 @@ pipeline {
             steps 
             {
                 echo 'creating infrastructure'
-		sh ' sudo terraform init'
+		sh ' sudo terraform init && terraform apply -auto-approve && terraform destroy -auto-approve'
             }
         }
         
