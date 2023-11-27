@@ -82,7 +82,7 @@ egress {
 }
 
 resource "aws_instance" "atesting-ec201" {
-  ami = var.eami
+  ami = "ami-0fa1ca9559f1892ec"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.sub-us-east-1a.id
   vpc_security_group_ids = [aws_security_group.sg01.id]
