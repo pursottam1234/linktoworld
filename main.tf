@@ -80,3 +80,22 @@ egress {
 
 }
 }
+
+resource "aws_instance" "atesting-ec201" {
+  ami = var.eami
+  instance_type = "t2.micro"
+  subnet_id = aws_subnet.sub-us-east-1a.id
+  vpc_security_group_ids = [aws_security_group.sg01.id]
+  user_data = <<-EOF
+#!/bin/bash
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+mkdir -p /var/www/html
+echo "Welcome" > /var/www/html/index.html
+EOF
+ tags = {
+    Name = "atesting-ec201"
+  }
+  key_name = "susigugh01"
+}
