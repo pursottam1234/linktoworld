@@ -25,12 +25,22 @@ pipeline {
         }
 	
 
+
 	 stage('push docker image') 
         {
             steps 
             {
                 echo 'pushing docker image'
 		sh 'docker image tag papache pursottam69bhandari/papache:v1'
+            }
+        }
+
+	stage('push docker image to dockerhub') 
+        {
+            steps 
+            {
+                echo 'creating docker image'
+		sh ' sudo docker login -u=pursottam69bhandari -p=purush.bhandari69@ && docker push pursottam69bhandari/papache:v1'
             }
         }
         
