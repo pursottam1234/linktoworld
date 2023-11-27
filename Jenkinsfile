@@ -40,7 +40,7 @@ pipeline {
             steps 
             {
                 echo 'creating docker image'
-		sh ' sudo docker login -u=pursottam69bhandari -p=purush.bhandari69@ && docker push pursottam69bhandari/papache:v1'
+		sh ' sudo docker login -u=pursottam69bhandari -p=purush.bhandari69@ && sudo docker push pursottam69bhandari/papache:v1'
             }
         }
         
