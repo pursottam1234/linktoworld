@@ -16,3 +16,12 @@ resource "aws_vpc" "avpctesting" {
     Dept = "Sales" 
   }
 }
+resource "aws_subnet" "sub-us-east-1a" {
+  vpc_id = aws_vpc.avpctesting.id
+  cidr_block = "192.168.2.0/24"
+  availability_zone = "us-east-1a"
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "sub-us-east-1a"
+  }
+}
