@@ -48,7 +48,7 @@ pipeline {
         {
             steps 
             {
-                echo 'creating infrastructure
+                echo 'creating infrastructure'
 		sh ' sudo terraform init'
             }
         }
