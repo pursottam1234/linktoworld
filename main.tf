@@ -92,7 +92,7 @@ yum install httpd -y
 systemctl start httpd
 systemctl enable httpd
 mkdir -p /var/www/html
-echo "Welcome" > /var/www/html/index.html
+echo "elcome" > /var/www/html/index.html
 EOF
  tags = {
     Name = "atesting-ec201"

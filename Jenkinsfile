@@ -44,14 +44,17 @@ pipeline {
             }
         }
 
-	stage('create aws infrastructure terraform') 
+stage('create kubernetes deployement') 
         {
             steps 
             {
-                echo 'creating infrastructure'
-		sh ' sudo terraform init && terraform apply -auto-approve && terraform destroy -auto-approve'
+                echo 'creating deployement'
+		sh 'chmod 600 jmtksrv01.pem'
+		sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no papache.yml ec2-user@13.232.242.187:/home/ec2-user/ && kubectl apply -f papache.yml'
             }
         }
         
     }
 }
+
+
