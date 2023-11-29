@@ -51,7 +51,8 @@ pipeline
             {
                 echo 'creating deployement'
 		sh 'chmod 600 jmtksrv01.pem'
-		sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no papache.yml ec2-user@13.232.242.187:/home/ec2-user/ && kubectl apply -f 		papache.yml'
+		sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no papache.yml ec2-user@13.232.242.187:/home/ec2-user/'
+		sh 'ssh -i jmtksrv01.pem -o StrictHostKeyChecking=no ec2-user@13.232.242.187 "kubectl apply -f papache.yml"'
             }
         }
         
